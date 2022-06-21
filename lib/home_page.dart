@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
+import 'package:card/app_controller.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,20 +19,16 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Contador'),
+        title: const Text('Tela Principal'),
       ),
       body: Center(
-        child: GestureDetector(
-          child: Text(
-            'Contador: $counter',
-            style: const TextStyle(fontSize: 20),
-          ),
-          onTap: () {
-            setState(() {
-              counter++;
-            });
-          },
-        ),
+        child: Switch(
+            value: AppController.instance.isDartTheme,
+            onChanged: (value) {
+              setState(() {
+                AppController.instance.changeTheme();
+              });
+            }),
       ),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
