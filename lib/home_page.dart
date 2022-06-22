@@ -20,6 +20,15 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tela Principal'),
+        actions: [
+          Switch(
+              value: AppController.instance.isDartTheme,
+              onChanged: (value) {
+                setState(() {
+                  AppController.instance.changeTheme();
+                });
+              }),
+        ],
       ),
       body: Center(
         child: Switch(
