@@ -30,14 +30,19 @@ class HomePageState extends State<HomePage> {
               }),
         ],
       ),
-      body: Center(
-        child: Switch(
-            value: AppController.instance.isDartTheme,
-            onChanged: (value) {
-              setState(() {
-                AppController.instance.changeTheme();
-              });
-            }),
+      body: SizedBox(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+                height: 150,
+                width: 150,
+                margin: const EdgeInsets.all(30),
+                decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 165, 164, 164),
+                    borderRadius: BorderRadius.all(Radius.circular(100)))),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
