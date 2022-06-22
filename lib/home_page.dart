@@ -31,16 +31,32 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       body: SizedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
           children: [
             Container(
-                height: 150,
-                width: 150,
+                height: 130,
+                width: 130,
                 margin: const EdgeInsets.all(30),
                 decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 165, 164, 164),
+                    color: Color.fromRGBO(212, 209, 209, 1),
                     borderRadius: BorderRadius.all(Radius.circular(100)))),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: const [
+              Text('Today is Activity',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      color: Color.fromARGB(255, 0, 0, 0))),
+            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.upload_file_outlined),
+                Container(
+                  margin: const EdgeInsets.all(5),
+                  child: const Text('12 news assignments uploaded'),
+                ),
+              ],
+            )
           ],
         ),
       ),
