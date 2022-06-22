@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:card/app_controller.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +45,7 @@ class HomePageState extends State<HomePage> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
-                      color: Color.fromARGB(255, 0, 0, 0))),
+                      color: Color.fromARGB(255, 29, 29, 29))),
             ]),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,6 +55,35 @@ class HomePageState extends State<HomePage> {
                   margin: const EdgeInsets.all(5),
                   child: const Text('12 news assignments uploaded'),
                 ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  // ignore: sort_child_properties_last
+                  child: Icon(
+                    Icons.add_task,
+                    color: Color.fromARGB(255, 133, 210, 255),
+                    size: 30,
+                  ),
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  margin: const EdgeInsets.all(14),
+                  height: 60,
+                  width: 180,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Colors.deepPurple),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(14),
+                  height: 60,
+                  width: 180,
+                  decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Colors.deepPurple),
+                )
               ],
             )
           ],
