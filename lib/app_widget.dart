@@ -11,14 +11,9 @@ class AppWidget extends StatelessWidget {
     return AnimatedBuilder(
       animation: AppController.instance,
       builder: (context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              primarySwatch: Colors.deepPurple,
-              brightness: AppController.instance.isDartTheme
-                  ? Brightness.dark
-                  : Brightness.light),
-          home: const HomePage(),
+          home: HomePage(),
         );
       },
     );
